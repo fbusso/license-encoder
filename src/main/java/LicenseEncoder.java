@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.util.Base64;
 
 
-public class LicenseRenderer {
+public class LicenseEncoder {
     static final String TEMPLATE_BACK = "./src/main/resources/template_licencia_back.jpg";
     static final String TEST_OUTPUT = "./src/main/resources/test.jpg";
     static final String FONT = "Arial";
     static final Integer FONT_SIZE = 25;
 
-    public static void render() {
+    public static void encode() {
         try {
             BufferedImage back = ImageIO.read(new File(TEMPLATE_BACK));
             Graphics g = back.getGraphics();
@@ -31,7 +31,7 @@ public class LicenseRenderer {
 
             g.dispose();
 
-            // Guarda la imagen en el directorio /res
+            // Guarda la imagen en el directorio /resources
             ImageIO.write(back, "jpg", new File(TEST_OUTPUT));
 
             // Encoding en base64 de la licencia
